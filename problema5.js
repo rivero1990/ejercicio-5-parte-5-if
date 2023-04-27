@@ -4,7 +4,6 @@ const CANT_MAX_GATOS = 2;
 const CANT_MASCOTAS_DEF = 0;
 const PASEO_TIEMPO_MIN = 30;
 const PASEO_TIEMPO_MAX = 60;
-const PASEO_TIEMPO_DEF = 0;
 const PRECIO_PERRO = 50;
 const PRECIO_GATO = 50;
 const COSTO_POR_MINUTO = 2;
@@ -24,6 +23,15 @@ if ((cantDeMascotas1 <= CANT_MAX_PERROS) && (cantDeMascotas2 <= CANT_MAX_GATOS )
     document.write(("Su pago mediante feriacoin fue exitoso : monto total " + 
     (((cantDeMascotas1 * PRECIO_PERRO) + (cantDeTiempo * COSTO_POR_MINUTO)) + (cantDeMascotas2 * PRECIO_GATO) +
     ((cantDeTiempo * COSTO_POR_MINUTO * AUMENTO_GATOS)) + " dolares")));
+} else if ((cantDeMascotas1 <= CANT_MAX_PERROS) && (cantDeMascotas1 > CANT_MASCOTAS_DEF) && 
+    (cantDeTiempo >= PASEO_TIEMPO_MIN) && (cantDeTiempo <= PASEO_TIEMPO_MAX)) {
+    document.write(("Su pago mediante feriacoin fue exitoso : monto total " + ((cantDeMascotas1 * PRECIO_PERRO) +
+    (cantDeTiempo * COSTO_POR_MINUTO)) + " dolares"));
+} else if ((cantDeMascotas2 <= CANT_MAX_GATOS) && (cantDeMascotas2 > CANT_MASCOTAS_DEF) && 
+    (cantDeTiempo >= PASEO_TIEMPO_MIN) && (cantDeTiempo <= PASEO_TIEMPO_MAX)) {
+    document.write(("Su pago mediante feriacoin fue exitoso : monto total " + ((cantDeMascotas2 * PRECIO_GATO) +
+    (cantDeTiempo * COSTO_POR_MINUTO * AUMENTO_GATOS)) + " dolares"));
+
 }
 
 else {
